@@ -1,0 +1,8 @@
+toolsForVSFinvestigation.txt
+
+Tassel
+Bcftools – old vcf tools
+scikitallele
+
+
+

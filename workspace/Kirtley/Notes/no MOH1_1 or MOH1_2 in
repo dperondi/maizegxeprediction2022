@@ -1,0 +1,13 @@
+no MOH1_1 or MOH1_2 in
+	1_submission
+	2_testing_meta
+	4_testing_weather
+	6_EC_testing
+	3_soil_testing
+
+MOH1_1, moh1_2 in training - moh1_1 = moh1 = moh1_2 - reps 1 and 2
+	4_training_weather
+	1_training_trait
+	2_training_meta
+	3_training-soil
+	6_training-EC
