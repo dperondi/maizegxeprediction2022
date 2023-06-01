@@ -225,8 +225,8 @@ test_data = pd.merge(left=test_data, right=ec_test, how='left', left_on=['Env'],
 print(test_data.shape)
 test_nan0 = test_data.replace(np.nan,0)
 
-open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/test_weekly_ec_meta_weather_soil_genome_Na0.csv', 'w')
-test_nan0.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/test_weekly_ec_meta_weather_soil_genome_Na0.csv', encoding='utf-8')
+open(r'/data/testBed/test_weekly_ec_meta_weather_soil_genome_Na0.csv', 'w')
+test_nan0.to_csv(r'/data/testBed/test_weekly_ec_meta_weather_soil_genome_Na0.csv', encoding='utf-8')
 
 ### Merge and write train data
 train_data = train_hybrid_data
@@ -252,5 +252,5 @@ print(train_data.shape)
 train_data = pd.merge(left=train_data, right=ec_train, how='left', left_on=['Env'], right_on=['Env'])
 print(train_data.shape)
 train_nan0 = train_data.replace(np.nan,0)
-open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/train_yearly_ec_meta_weather_soil_genome_2NA0.csv', 'w')
-train_nan0.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/train_yearly_ec_meta_weather_soil_genome_2NA0.csv', encoding='utf-8')
+open(r'/data/testBed/train_yearly_ec_meta_weather_soil_genome_2NA0.csv', 'w')
+train_nan0.to_csv(r'/data/testBed/train_yearly_ec_meta_weather_soil_genome_2NA0.csv', encoding='utf-8')
