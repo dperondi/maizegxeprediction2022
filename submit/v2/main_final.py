@@ -6,8 +6,8 @@ import numpy as np
  
 
 #%% Get data file names
-trainDataPath = r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/data/raw/Training_Data'
-testDataPath = r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/data/raw/Testing_Data'
+trainDataPath = r'/data/raw/Training_Data'
+testDataPath = r'/data/raw/Testing_Data'
 trainData = glob.glob(trainDataPath + "/*.csv")
 testData = glob.glob(testDataPath + '/*.csv')
 
@@ -98,8 +98,8 @@ for trainFile in trainData:
             df_imputed_final = train_df[['Hybrid','Env', 'Yield_Mg_ha']]
             yieldDF.append(df_imputed_final)
             
-            open(r'//Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/training_trait_imputed.csv', 'w')
-            df_imputed_final.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/training_trait_imputed.csv', encoding='utf-8')
+            open(r'/data/training_trait_imputed.csv', 'w')
+            df_imputed_final.to_csv(r'/data/training_trait_imputed.csv', encoding='utf-8')
             trainDFs.append(train_df)
               
     for testFile in testData: 
@@ -169,10 +169,10 @@ for trainFile in trainData:
 
             dateTime_index_test = gb.resample('m').mean()
             
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/weather_weekly_train_imputed.csv', 'w')
-            dateTime_index_train.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/weather_weekly_train_imputed.csv', encoding='utf-8')
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/weather_weekly_test_imputed.csv', 'w')
-            dateTime_index_test.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/weather_weekly_test_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/weather_weekly_train_imputed.csv', 'w')
+            dateTime_index_train.to_csv(r'/data/testBed/weather_weekly_train_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/weather_weekly_test_imputed.csv', 'w')
+            dateTime_index_test.to_csv(r'/data/testBed/weather_weekly_test_imputed.csv', encoding='utf-8')
     
 
         if 'Soil' in trainFile and 'Soil' in testFile: # Process the soil file to remove certain columns, break out time between recieved and reported data, impute 
@@ -224,10 +224,10 @@ for trainFile in trainData:
             imputed_train_df['Env' ] = imputed_train_df['Env'].astype(str) +"_"+ imputed_train_df["Year"].astype(str)
             imputed_test_df['Env' ] = imputed_test_df['Env'].astype(str) +"_"+ imputed_test_df["Year"].astype(str)
             
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/soil_train_imputed.csv', 'w')
-            imputed_train_df.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/soil_train_imputed.csv', encoding='utf-8')
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/soil_test_imputed.csv', 'w')
-            imputed_test_df.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/soil_test_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/soil_train_imputed.csv', 'w')
+            imputed_train_df.to_csv(r'/data/testBed/soil_train_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/soil_test_imputed.csv', 'w')
+            imputed_test_df.to_csv(r'/data/testBed/soil_test_imputed.csv', encoding='utf-8')
         
             
         if 'EC' in trainFile and 'EC' in testFile: #Process the EC files
@@ -257,10 +257,10 @@ for trainFile in trainData:
             common_test_DF['Env' ] = common_test_DF['Env'].astype(str) +"_"+ common_test_DF["Year"].astype(str)
                     
             
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/ec_train_imputed.csv', 'w')
-            common_train_DF.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/ec_train_imputed.csv', encoding='utf-8')
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/ec_test_imputed.csv', 'w')
-            common_test_DF.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/ec_test_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/ec_train_imputed.csv', 'w')
+            common_train_DF.to_csv(r'/data/testBed/ec_train_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/ec_test_imputed.csv', 'w')
+            common_test_DF.to_csv(r'/data/testBed/ec_test_imputed.csv', encoding='utf-8')
 
 
         if 'Meta' in trainFile and 'Meta' in testFile: ### Process the Meta Data file to include dropping columns, building a data column for days between weather station planting, impute, and write out
@@ -313,7 +313,7 @@ for trainFile in trainData:
             imputed_train_df['Env' ] = imputed_train_df['Env'].astype(str) +"_"+ imputed_train_df["Year"].astype(str)
             imputed_test_df['Env' ] = imputed_test_df['Env'].astype(str) +"_"+ imputed_test_df["Year"].astype(str)
             
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/meta_train_imputed.csv', 'w')
-            imputed_train_df.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/meta_train_imputed.csv', encoding='utf-8')
-            open(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/meta_test_imputed.csv', 'w')
-            imputed_test_df.to_csv(r'/Users/bkamos/Documents/GitHub/maizegxeprediction2022/workspace/Kirtley/data/testBed/meta_test_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/meta_train_imputed.csv', 'w')
+            imputed_train_df.to_csv(r'/data/testBed/meta_train_imputed.csv', encoding='utf-8')
+            open(r'/data/testBed/meta_test_imputed.csv', 'w')
+            imputed_test_df.to_csv(r'/data/testBed/meta_test_imputed.csv', encoding='utf-8')
